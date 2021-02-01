@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import placeholderImg from './placeholder.png'
 import { ReactComponent as ChevronLeft } from './chevron-left.svg'
 import { ReactComponent as ChevronRight } from './chevron-right.svg'
 import InputSearch from './components/input-search/InputSearch'
+import Card from './components/card/Card'
 
 function App() {
   const [list, setList] = useState([]);
@@ -70,17 +70,8 @@ function App() {
             {numberPage !== 1 && <ChevronLeft onClick={() => onChangePageClicked('prev')}/>}
           </div>
           <div className="search-results-list">
-            {list.Search.map(result => (
-              <div key={result.imdbID} className="search-item">
-                <img
-                  src={result.Poster === 'N/A' ? placeholderImg : result.Poster}
-                  alt="poster"
-                />
-                <div className="search-item-data">
-                  <div className="title">{result.Title}</div>
-                  <div className="meta">{`${result.Type} | ${result.Year}`}</div>
-                </div>
-              </div>
+            {list.Search.map((result, index) => (
+              <Card key={index} item={result}/>
             ))}
           </div>
           <div className="chevron">
