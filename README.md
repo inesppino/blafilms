@@ -1,4 +1,4 @@
-# Segunda prueba del proceso de selección.
+# Listado de peliculas
 
 Este repositorio contiene una mini app que se encarga de mostrar las películas/series que se obtienen de la api de [OMDB](http://www.omdbapi.com/).
 
